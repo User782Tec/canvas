@@ -3,14 +3,10 @@ const ctx = canvas.getContext('2d');
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-
 canvas.style.width = window.innerWidth + 'px';
 canvas.style.height = window.innerHeight + 'px';
-
 let width = canvas.width;
 let height = canvas.height;
-
-//ctx.transform(4, 0, 0, 4, 0, 0);
 
 let fps = 0;
 
@@ -45,6 +41,16 @@ class Ball {
         }
         //window.requestAnimationFrame(this.animate.bind(this));
     }
+    static draw() {
+        //ctx.clearRect(0, 0, width, height);
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+        ctx.fillRect(0, 0, width, height);
+        for (const elt of Ball.ball) {
+            elt.draw();
+            elt.animate();
+        }
+        window.requestAnimationFrame(Ball.draw);
+    }
 }
 Ball.ball = [];
 
@@ -52,24 +58,16 @@ function test() {
     fps++;
     window.requestAnimationFrame(test);
 }
-
 function display() {
     document.getElementById('result').innerText = fps + 'fps';
     fps = 0;
 }
+
 var ball1 = new Ball(10, 5, 5, 5, 10,'#ee0000');
 var ball2 = new Ball(10, 5, 5, 10, 5, '#66ccff');
-var ball3 = new Ball(10, 8, 1, 10, 10, "#3cdb6e");
-function draw() {
-    //ctx.clearRect(0, 0, width, height);
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
-    ctx.fillRect(0, 0, width, height);
-    for (const elt of Ball.ball) {
-        elt.draw();
-        elt.animate();
-    }
-    window.requestAnimationFrame(draw);
-}
-draw();
+var ball3 = new Ball(10, 5, 5, 10, 10, "#3cdb6e");
+
+Ball.draw();
+
 window.setInterval(display, 1000);
 window.requestAnimationFrame(test);
