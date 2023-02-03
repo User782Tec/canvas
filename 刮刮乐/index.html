@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+            touch-action: none;
+        }
+
+        canvas {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+
+        html, body, #prize {
+            height: 100%;
+            width: 100%;
+            background-color: white;
+        }
+
+        #notice {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            z-index: 1;
+        }
+
+        #prize {
+            font-family: sans-serif;
+            font-size: 4em;
+            font-weight: 300;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+
+        #prize>#prompt {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div id="notice">提示: 奖品均不兑现</div>
+    <div id="prize"></div>
+    <canvas id="cover"></canvas>
+    <canvas id="frame"></canvas>
+    <script src="main.js"></script>
+</body>
+</html>
