@@ -46,7 +46,6 @@ class Ball {
         ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
         ctx.fillRect(0, 0, width, height);
         for (const elt of Ball.ball) {
-            elt.draw();
             elt.animate();
         }
         window.requestAnimationFrame(Ball.draw);
@@ -59,7 +58,7 @@ function test() {
     window.requestAnimationFrame(test);
 }
 function display() {
-    document.getElementById('result').innerText = fps + 'fps';
+    document.getElementById('fps').innerText = fps + 'fps';
     fps = 0;
 }
 

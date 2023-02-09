@@ -13,3 +13,6 @@ CanvasRenderingContext2D测试
 ## 刮刮乐
 
 [ [源码](https://github.com/User782Tec/canvas/tree/main/刮刮乐)｜[演示](https://user782tec.github.io/canvas/刮刮乐) ]
+
+## 烟花
+[ [源码](https://github.com/User782Tec/canvas/tree/main/烟花)｜[演示](https://user782tec.github.io/canvas/烟花)]

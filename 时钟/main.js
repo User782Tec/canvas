@@ -87,5 +87,6 @@ function draw() {
     window.setTimeout(draw, 1000);
 }
 
+ctx.rotate(Math.PI);
 drawbase();
 draw();
