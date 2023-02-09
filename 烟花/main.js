@@ -57,7 +57,7 @@ class Firework {
             if (this.vy < 0.6) {
                 this.animating = false;
                 var time = Math.floor(Math.random() * 10);
-                for (var i = (Math.floor(time / 3 * Math.random()) + 1); i > 0; i--) {
+                for (var i = (Math.floor(Math.random() * 3) + 1); i > 0; i--) {
                     window.setTimeout(this.spread.bind(this, this.vy / i, time), Math.floor(Math.random() * 500) + 700);
                 }
             }
